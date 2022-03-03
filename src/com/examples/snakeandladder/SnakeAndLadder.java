@@ -44,7 +44,7 @@ public class SnakeAndLadder {
                         break;
                 }
                 if (currentPosition == 100) {
-                    System.out.println("Current Position: " + currentPosition);
+                    System.out.println("Position: " + currentPosition);
                     System.out.println("You Won!");
                     break;
                 } else if (currentPosition > 100) {
@@ -52,7 +52,8 @@ public class SnakeAndLadder {
                     System.out.println("Current Position: " + currentPosition);
                 } else if (currentPosition < 0) {
                     currentPosition = startPosition;
-                    System.out.println("Start position");
+                    System.out.println("Back to Start");
+                    System.out.println("Current Position: " + currentPosition);
                 } else {
                     System.out.println("Current Position: " + currentPosition);
                 }
