@@ -6,10 +6,10 @@ public class SnakeAndLadder {
     public static final int IS_LADDER = 1;
     public static final int IS_SNAKE = 2;
     static Random random = new Random();
-    int startPosition = 0;
-    int currentPosition = 0;
-    int position1 = 0;
-    int position2 = 0;
+    int startPosition = 98;
+    int currentPosition = 98;
+    int position1 = 98;
+    int position2 = 98;
     int playerDie = 0;
     int counterP1 = 0;
     int counterP2 = 0;
@@ -43,6 +43,7 @@ public class SnakeAndLadder {
     }
     /////////////////////////////////////////////////////////////////////////////////
     void checkPosition(int p) {
+
         if (currentPosition == 100) {
             System.out.println("Current Position of Player " +p +" is " + currentPosition);
             exitGame(p);
@@ -60,13 +61,24 @@ public class SnakeAndLadder {
         else {
             System.out.println("Current Position of Player " +p +" is " + currentPosition);
         }
+        position(p);
     }
-/////////////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////////////////
+    void position(int p){
+        if (p == 1) {
+            position1 = currentPosition;
+        } else {
+            position2 = currentPosition;
+        }
+    }
+    ///////////////////////////////////////////////////////////////////////////////////////////////
     void optionCheck(int p) {
         if (p == 1) {
             counterP1++;
+            currentPosition = position1;
         } else {
             counterP2++;
+            currentPosition = position2;
         }
         playerDie = getRandomDieValue();
         System.out.println("-------------------------------");
@@ -77,13 +89,6 @@ public class SnakeAndLadder {
         if (die == 5) {
             System.out.println("Dice Face for Player " + p + ": " + playerDie);
             int option = getRandomOption();
-            if (p == 1) {
-                position1 += currentPosition;
-                currentPosition=position1;
-            } else {
-                position2 += currentPosition;
-                currentPosition=position2;
-            }
             switch (option) {
                 case IS_LADDER:
                     System.out.println("Option: LADDER");
@@ -103,6 +108,7 @@ public class SnakeAndLadder {
                     checkPlayer();
                     break;
             }
+            position(p);
         }
         else{
             System.exit(0);
