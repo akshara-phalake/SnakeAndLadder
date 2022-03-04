@@ -6,10 +6,10 @@ public class SnakeAndLadder {
     public static final int IS_LADDER = 1;
     public static final int IS_SNAKE = 2;
     static Random random = new Random();
-    int startPosition = 98;
-    int currentPosition = 98;
-    int position1 = 98;
-    int position2 = 98;
+    int startPosition = 0;
+    int currentPosition = 0;
+    int position1 = 0;
+    int position2 = 0;
     int playerDie = 0;
     int counterP1 = 0;
     int counterP2 = 0;
