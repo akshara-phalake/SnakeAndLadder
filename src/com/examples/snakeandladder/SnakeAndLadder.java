@@ -21,7 +21,7 @@ public class SnakeAndLadder {
         Scanner in = new Scanner(System.in);
 
         int startPosition = 0;
-        int currentPosition = 98;
+        int currentPosition = 0;
         int counter = 0;
         System.out.println("Player is starting at: " +startPosition);
         while (currentPosition != 100) {
